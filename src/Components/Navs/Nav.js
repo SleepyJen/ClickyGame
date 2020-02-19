@@ -2,14 +2,14 @@ import React from 'react'
 
 function Nav() {
     return (
-        <nav class="navbar nav-pills nav-justified">
-            <li class="nav-item">
+        <nav className="navbar nav-pills nav-justified">
+            <li className="nav-item">
                 <a href="/">Jen's Clicky Game</a>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
                 Click on an Image to Start
                 </li>
-            <li class="nav-item">
+            <li className="nav-item">
                 Score: 0 | Top Score: 0
                 </li>
         </nav>
