@@ -2,7 +2,7 @@ import React from 'react'
 
 function Nav(props) {
     return (
-        <nav className="navbar nav-pills nav-justified">
+        <nav className="navbar nav-pills nav-justified" >
             <li className="nav-item">
                 <a href="/">Jen's Clicky Game</a>
             </li>

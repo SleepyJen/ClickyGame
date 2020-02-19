@@ -2,13 +2,14 @@
     text-align: center;
 }
 .header{
-    height: 350px;
-    background-image: url('../../Images/water-1330252__340.jpg');
+    height: 400px;
+    background-image: url('../../Images/2ilN4K.jpg');
     background-size: cover;
 }
 .title{
-    padding-top: 100px;
+    padding-top: 150px;
     display: block;
+    color: lightblue;
 }
 
 h1{

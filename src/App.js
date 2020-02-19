@@ -13,7 +13,8 @@ class App extends Component {
       correctGuesses: 0,
       bestScore: 0,
       shuffle: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-      message: 'Click on an Image to Start'
+      message: 'Click on an Image to Start',
+      win: false
     };
     this.reshuffle = this.reshuffle.bind(this);
   }
@@ -38,20 +39,31 @@ class App extends Component {
       });
     } else {
       let cg = this.state.correctGuesses + 1;
-      this.setState({
-        shuffle: arr,
-        clicked: [...this.state.clicked, name],
-        message: "Correct!",
-        correctGuesses: cg,
-        correct: true
-      });
+      if (cg >= 12) {
+        this.setState({
+          message: 'CONGRATS!!!! You got them all!!',
+          correctGuesses: 0,
+          clicked: [],
+          win: true,
+          bestScore: 12
+        });
+      } else {
+        this.setState({
+          shuffle: arr,
+          clicked: [...this.state.clicked, name],
+          message: "Correct!",
+          correctGuesses: cg,
+          correct: true,
+          win: false
+        });
+      }
     }
 
   }
 
   render() {
     return (
-      <div className="body">
+      <div className={"body" + (this.state.win ? " win" : "")} id="my-canvas">
         <Nav message={this.state.message} correctGuesses={this.state.correctGuesses} highScore={this.state.bestScore} />
         <div>
           <Header />

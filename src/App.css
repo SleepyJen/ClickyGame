@@ -22,3 +22,13 @@ a{
 .body{
   background-color: antiquewhite;
 }
+
+.win {
+  animation-name: win; 
+  animation-duration: 10s; 
+}
+
+@keyframes win {
+  from {background-color: antiquewhite;}
+  to {background-color: blueviolet;}
+}
