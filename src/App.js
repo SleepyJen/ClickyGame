@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      cliked: false,
+      clicked: [],
       correctGuesses: 0,
       bestScore: 0,
       shuffle: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -17,19 +17,37 @@ class App extends Component {
     this.reshuffle = this.reshuffle.bind(this);
   }
 
-  reshuffle() {
+  reshuffle(name) {
     let arr = this.state.shuffle;
     arr.sort(() => {
       return 0.5 - Math.random();
     });
-    this.setState({ shuffle: arr });
+
+    if (this.state.clicked.includes(name)) {
+      let newBest = this.state.bestScore;
+      if (this.state.correctGuesses > this.state.bestScore) {
+        newBest = this.state.correctGuesses;
+      }
+      this.setState({
+        message: 'Sorry, That guess is wrong please try again!',
+        correctGuesses: 0,
+        bestScore: newBest
+      });
+    } else {
+      let cg = this.state.correctGuesses + 1;
+      this.setState({
+        shuffle: arr,
+        clicked: [...this.state.clicked, name],
+        correctGuesses: cg
+      });
+    }
 
   }
 
   render() {
     return (
       <div className="body">
-        <Nav />
+        <Nav message={this.state.message} correctGuesses={this.state.correctGuesses} highScore={this.state.bestScore} />
         <div>
           <Header />
         </div>

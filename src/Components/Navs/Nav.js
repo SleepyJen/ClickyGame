@@ -1,17 +1,17 @@
 import React from 'react'
 
-function Nav() {
+function Nav(props) {
     return (
         <nav className="navbar nav-pills nav-justified">
             <li className="nav-item">
                 <a href="/">Jen's Clicky Game</a>
             </li>
             <li className="nav-item">
-                Click on an Image to Start
-                </li>
+                {props.message}
+            </li>
             <li className="nav-item">
-                Score: 0 | Top Score: 0
-                </li>
+                Score: {props.correctGuesses} | Top Score: {props.highScore}
+            </li>
         </nav>
     )
 }

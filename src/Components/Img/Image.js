@@ -14,10 +14,12 @@ import Tink from '../../Images/tink.jpg';
 import Wendy from '../../Images/wendy.jpg';
 
 const imgs = [Aurora, Belle, Elsa, Jasmine, Meg, Merida, Mulan, Rapunzel, Snow, Tiana, Tink, Wendy];
+const names = ["Aurora", "Belle", "Elsa", "Jasmine", "Meg", "Merida", "Mulan", "Rapunzel", "Snow",
+    "Tiana", "Tink", "Wendy"]
 
 function Image(props) {
     return (
-        <img className="img mr-3 mt-2" src={imgs[props.src]} onClick={props.click} alt="princess"></img>
+        <img className="img mr-3 mt-2" src={imgs[props.src]} onClick={() => { props.click(names[props.src]) }} alt="princess"></img>
     )
 }
 
