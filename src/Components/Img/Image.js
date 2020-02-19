@@ -17,7 +17,7 @@ const imgs = [Aurora, Belle, Elsa, Jasmine, Meg, Merida, Mulan, Rapunzel, Snow, 
 
 function Image(props) {
     return (
-        <img className="img mr-3 mt-2" src={imgs[props.src]} alt="princess"></img>
+        <img className="img mr-3 mt-2" src={imgs[props.src]} onClick={props.click} alt="princess"></img>
     )
 }
 
