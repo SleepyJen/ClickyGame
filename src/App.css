@@ -2,7 +2,7 @@
   text-align: center;
 }
 .navbar{
-  background-color: rgb(231, 126, 240);
+  background-color: rgb(126, 206, 240);
   color: white;
   position: fixed;
   width: 100%;
@@ -16,4 +16,6 @@ a{
 
 .navbar li{
   display: inline-block;
+  font-weight: bold;
+  font-size: 25px;
 }

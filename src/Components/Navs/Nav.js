@@ -2,7 +2,7 @@ import React from 'react'
 
 function Nav() {
     return (
-        <nav class="navbar nav-justified">
+        <nav class="navbar nav-pills nav-justified">
             <li class="nav-item">
                 <a href="/">Jen's Clicky Game</a>
             </li>

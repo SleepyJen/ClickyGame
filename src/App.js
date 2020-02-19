@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import Nav from './Components/Navs/Nav';
-import Header from './Components/Navs/Header/Header';
+import Header from './Components/Header/Header';
+import Nav from './Components/Navs/Nav'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     return (
-      <main>
+      <div>
         <Nav />
-        <Header />
-      </main>
+        <br />
+        <div>
+          <Header />
+        </div>
+      </div>
     )
   }
 }
